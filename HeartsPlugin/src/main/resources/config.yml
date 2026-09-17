@@ -1,0 +1,35 @@
+starting-hearts: 4
+max-hearts: 20
+heart-price: 10000000000
+pvp-timeout: 10
+messages:
+  prefix: '&8[&bHearts&8] &r'
+  no-economy: '&cVault/Economy ist nicht verfügbar.'
+  purchase-success: '&aDu hast ein Herz für &e$%price% &agekauft. &7Herzen: &b%hearts%'
+  purchase-no-money: '&cDu hast nicht genug Geld. Benötigt: &e$%price%'
+  purchase-max: '&cDu hast bereits die maximale Anzahl von &e%max% &cHerzen.'
+  paid-life: '&a10.000.000.000 $ wurden bezahlt. Du bleibst bei &b1 Herz&a.'
+  banned: '&cDu hast 0 Herzen und wurdest permanent gebannt.'
+  admin-only: '&cDafür brauchst du die Berechtigung &ehearts.admin&c.'
+  player-not-found: '&cSpieler nicht gefunden.'
+  invalid-number: '&cUngültige Zahl.'
+  negative: '&cNegative Werte sind nicht erlaubt.'
+  set-success: '&a%player% hat jetzt &b%hearts% &aHerzen.'
+  give-success: '&a%player% bekam &b%amount% &aHerz(en).'
+  take-success: '&a%player% verlor &b%amount% &aHerz(en).'
+  get-success: '&e%player% &ahat &b%hearts% &aHerzen.'
+  reload-success: '&aKonfiguration neu geladen.'
+  banned-success: '&a%player% wurde permanent gebannt.'
+  unbanned-success: '&a%player% wurde entbannt.'
+  usage: '&e/hearts set <player> <amount>\n&e/hearts give <player> <amount>\n&e/hearts take <player> <amount>\n&e/hearts get <player>\n&e/hearts reload\n&e/hearts ban <player>\n&e/hearts unban <player>'
+gui:
+  title: '&8Herz kaufen'
+  confirm-name: '&aHerz kaufen'
+  confirm-lore:
+    - '&7Preis: &e$%price%'
+    - '&7Klicke, um ein Herz zu kaufen.'
+  cancel-name: '&cAbbrechen'
+  cancel-lore:
+    - '&7Schließt dieses Menü.'
+display:
+  title: '&b❤ &fHerzen'

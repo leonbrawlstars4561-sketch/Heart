@@ -1,0 +1,17 @@
+name: HeartsPlugin
+version: '1.0.0'
+main: de.example.hearts.HeartsPlugin
+api-version: '26.2'
+author: Example
+softdepend: [Vault]
+commands:
+  heart:
+    description: Opens the heart purchase GUI.
+    usage: /heart
+  hearts:
+    description: Administrative heart commands.
+    usage: /hearts <set|give|take|get|reload|ban|unban> ...
+permissions:
+  hearts.admin:
+    description: Allows administration of player hearts.
+    default: op
