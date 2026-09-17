@@ -1,22 +1,31 @@
+# HeartsPlugin/.github/workflows/maven.yml
+
 name: Maven Build
+
 on:
   push:
   pull_request:
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Set up Java 25
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
           java-version: '25'
+          distribution: 'temurin'
           cache: maven
-      - name: Build
-        run: mvn --batch-mode clean package
+
+      - name: Build with Maven
+        run: mvn clean package
+
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: HeartsPlugin
-          path: target/*.jar
+          path: target/HeartsPlugin.jar
