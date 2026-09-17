@@ -1,8 +1,10 @@
-name: Maven Build
+name: Build HeartsPlugin
 
 on:
   push:
-  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -12,19 +14,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Java 25
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          java-version: '25'
-          distribution: 'temurin'
+          distribution: temurin
+          java-version: '21'
           cache: maven
 
-      - name: Build with Maven
+      - name: Build HeartsPlugin
         working-directory: HeartsPlugin
         run: mvn clean package
+
+      - name: Show target files
+        run: ls -la HeartsPlugin/target
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: HeartsPlugin
-          path: HeartsPlugin/target/HeartsPlugin.jar
+          path: HeartsPlugin/target/*.jar
+          if-no-files-found: error
